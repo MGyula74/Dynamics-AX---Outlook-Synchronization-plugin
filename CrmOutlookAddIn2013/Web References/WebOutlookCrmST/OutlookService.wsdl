@@ -1,0 +1,2226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://tempuri.org/smmActivities.xsd" />
+      <s:import namespace="http://tempuri.org/Northwind.xsd" />
+      <s:import namespace="http://tempuri.org/SMMTABLES.xsd" />
+      <s:import schemaLocation="http://bcefesps03:8081/webservices/OutlookService.asmx?schema=Northwind" namespace="http://tempuri.org/Northwind.xsd" />
+      <s:import schemaLocation="http://bcefesps03:8081/webservices/OutlookService.asmx?schema=smmActivities" namespace="http://tempuri.org/smmActivities.xsd" />
+      <s:import schemaLocation="http://bcefesps03:8081/webservices/OutlookService.asmx?schema=SMMTABLES" namespace="http://tempuri.org/SMMTABLES.xsd" />
+      <s:element name="IsLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTestMode">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsTestModeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsTestModeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNetworkAlias">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNetworkAliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNetworkAliasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUsingWebReferenc">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsUsingWebReferencResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUsingWebReferencResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilterDateNext">
+        <s:complexType />
+      </s:element>
+      <s:element name="FilterDateNextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilterDateNextResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilterDateBack">
+        <s:complexType />
+      </s:element>
+      <s:element name="FilterDateBackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilterDateBackResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetsmmActivities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_responsibleEmployee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetsmmActivitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetsmmActivitiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/smmActivities.xsd" name="namespace" />
+                <s:attribute fixed="SMMACTIVITIESDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_domain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/smmActivities.xsd" name="namespace" />
+                <s:attribute fixed="USERDATADataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertsmmActivities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="_empId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_allday" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_billingInformation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_categories" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_tASKPRIORITY" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_mileage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_reminderSet" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="_reminderMinutesBeforeStart" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_resources" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_responseRequested" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="_sensitivity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_aCTIVITYTIMETYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_domainUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookEntryId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertsmmActivitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertsmmActivitiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="extractPartyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="extractPartyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="extractPartyIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="_empId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_allday" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_billingInformation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_categories" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_tASKPRIORITY" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_mileage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_reminderSet" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="_reminderMinutesBeforeStart" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_resources" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_responseRequested" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="_sensitivity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_aCTIVITYTIMETYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_domainUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookEntryId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertActivityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="_empId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_allday" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_billingInformation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_categories" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_tASKPRIORITY" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_mileage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_reminderSet" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="_reminderMinutesBeforeStart" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_resources" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_responseRequested" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="_sensitivity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_aCTIVITYTIMETYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_domainUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookEntryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_activityNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateActivityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateActivityOutlookEntryId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_activityNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_dataArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookEntryId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateActivityOutlookEntryIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateActivityOutlookEntryIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDeletedActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookEntryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsDeletedActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDeletedActivityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookEntryId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteActivityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmplTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_emplID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookCalendarID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_outlookCalendarStoreID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmplTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEmplTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBusinessRelationsBySalesDistrict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalesDistrictId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brNameFilter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBusinessRelationsBySalesDistrictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBusinessRelationsBySalesDistrictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Northwind.xsd" name="namespace" />
+                <s:attribute fixed="SMMBUSRELTABLE_DisplayDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBusinessRelationsJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brNameFilter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBusinessRelationsJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBusinessRelationsJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsByPartyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataArea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsByPartyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactsByPartyIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Northwind.xsd" name="namespace" />
+                <s:attribute fixed="CONTACTPERSONShortDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserSalesDistricts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserSalesDistrictsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserSalesDistrictsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/SMMTABLES.xsd" name="namespace" />
+                <s:attribute fixed="SalesDistrictDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="existActNumByOLEntryID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OLEntryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="existActNumByOLEntryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="existActNumByOLEntryIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="synchronizationFinished">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmplId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="synchronizationFinishedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getLastSynchronizationTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmplId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLastSynchronizationTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getLastSynchronizationTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+      <s:element name="SMMACTIVITIESDataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/smmActivities.xsd" name="namespace" />
+          <s:attribute fixed="SMMACTIVITIESDataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+      <s:element name="USERDATADataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/smmActivities.xsd" name="namespace" />
+          <s:attribute fixed="USERDATADataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+      <s:element name="SMMBUSRELTABLE_DisplayDataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/Northwind.xsd" name="namespace" />
+          <s:attribute fixed="SMMBUSRELTABLE_DisplayDataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+      <s:element name="CONTACTPERSONShortDataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/Northwind.xsd" name="namespace" />
+          <s:attribute fixed="CONTACTPERSONShortDataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+      <s:element name="SalesDistrictDataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+          <s:attribute fixed="http://tempuri.org/SMMTABLES.xsd" name="namespace" />
+          <s:attribute fixed="SalesDistrictDataTable" name="tableTypeName" />
+        </s:complexType>
+      </s:element>
+      <s:element name="dateTime" type="s:dateTime" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsLogSoapIn">
+    <wsdl:part name="parameters" element="tns:IsLog" />
+  </wsdl:message>
+  <wsdl:message name="IsLogSoapOut">
+    <wsdl:part name="parameters" element="tns:IsLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsTestModeSoapIn">
+    <wsdl:part name="parameters" element="tns:IsTestMode" />
+  </wsdl:message>
+  <wsdl:message name="IsTestModeSoapOut">
+    <wsdl:part name="parameters" element="tns:IsTestModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNetworkAliasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNetworkAlias" />
+  </wsdl:message>
+  <wsdl:message name="GetNetworkAliasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNetworkAliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUsingWebReferencSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUsingWebReferenc" />
+  </wsdl:message>
+  <wsdl:message name="IsUsingWebReferencSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUsingWebReferencResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateNextSoapIn">
+    <wsdl:part name="parameters" element="tns:FilterDateNext" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateNextSoapOut">
+    <wsdl:part name="parameters" element="tns:FilterDateNextResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateBackSoapIn">
+    <wsdl:part name="parameters" element="tns:FilterDateBack" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateBackSoapOut">
+    <wsdl:part name="parameters" element="tns:FilterDateBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteInfo" />
+  </wsdl:message>
+  <wsdl:message name="WriteInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetsmmActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetsmmActivities" />
+  </wsdl:message>
+  <wsdl:message name="GetsmmActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetsmmActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertsmmActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertsmmActivities" />
+  </wsdl:message>
+  <wsdl:message name="InsertsmmActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertsmmActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="extractPartyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:extractPartyID" />
+  </wsdl:message>
+  <wsdl:message name="extractPartyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:extractPartyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertActivity" />
+  </wsdl:message>
+  <wsdl:message name="InsertActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateActivity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityOutlookEntryIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateActivityOutlookEntryId" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityOutlookEntryIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateActivityOutlookEntryIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsDeletedActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:IsDeletedActivity" />
+  </wsdl:message>
+  <wsdl:message name="IsDeletedActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:IsDeletedActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteActivity" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmplTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmplTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmplTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmplTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsBySalesDistrictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBusinessRelationsBySalesDistrict" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsBySalesDistrictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBusinessRelationsBySalesDistrictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBusinessRelationsJson" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBusinessRelationsJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByPartyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactsByPartyID" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByPartyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactsByPartyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSalesDistrictsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserSalesDistricts" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSalesDistrictsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserSalesDistrictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="existActNumByOLEntryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:existActNumByOLEntryID" />
+  </wsdl:message>
+  <wsdl:message name="existActNumByOLEntryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:existActNumByOLEntryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="synchronizationFinishedSoapIn">
+    <wsdl:part name="parameters" element="tns:synchronizationFinished" />
+  </wsdl:message>
+  <wsdl:message name="synchronizationFinishedSoapOut">
+    <wsdl:part name="parameters" element="tns:synchronizationFinishedResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLastSynchronizationTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getLastSynchronizationTime" />
+  </wsdl:message>
+  <wsdl:message name="getLastSynchronizationTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getLastSynchronizationTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsLogHttpGetIn" />
+  <wsdl:message name="IsLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsTestModeHttpGetIn" />
+  <wsdl:message name="IsTestModeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetNetworkAliasHttpGetIn" />
+  <wsdl:message name="GetNetworkAliasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IsUsingWebReferencHttpGetIn" />
+  <wsdl:message name="IsUsingWebReferencHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateNextHttpGetIn" />
+  <wsdl:message name="FilterDateNextHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateBackHttpGetIn" />
+  <wsdl:message name="FilterDateBackHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="WriteInfoHttpGetIn">
+    <wsdl:part name="info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteInfoHttpGetOut" />
+  <wsdl:message name="GetsmmActivitiesHttpGetIn">
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_responsibleEmployee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetsmmActivitiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:SMMACTIVITIESDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataHttpGetIn">
+    <wsdl:part name="_domain" type="s:string" />
+    <wsdl:part name="_user" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:USERDATADataTable" />
+  </wsdl:message>
+  <wsdl:message name="InsertsmmActivitiesHttpGetIn">
+    <wsdl:part name="_startDate" type="s:string" />
+    <wsdl:part name="_endDate" type="s:string" />
+    <wsdl:part name="_empId" type="s:string" />
+    <wsdl:part name="_allday" type="s:string" />
+    <wsdl:part name="_billingInformation" type="s:string" />
+    <wsdl:part name="_body" type="s:string" />
+    <wsdl:part name="_subject" type="s:string" />
+    <wsdl:part name="_categories" type="s:string" />
+    <wsdl:part name="_tASKPRIORITY" type="s:string" />
+    <wsdl:part name="_location" type="s:string" />
+    <wsdl:part name="_mileage" type="s:string" />
+    <wsdl:part name="_reminderSet" type="s:string" />
+    <wsdl:part name="_reminderMinutesBeforeStart" type="s:string" />
+    <wsdl:part name="_resources" type="s:string" />
+    <wsdl:part name="_responseRequested" type="s:string" />
+    <wsdl:part name="_sensitivity" type="s:string" />
+    <wsdl:part name="_aCTIVITYTIMETYPE" type="s:string" />
+    <wsdl:part name="_domainUserID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertsmmActivitiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="extractPartyIDHttpGetIn">
+    <wsdl:part name="message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="extractPartyIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertActivityHttpGetIn">
+    <wsdl:part name="_startDate" type="s:string" />
+    <wsdl:part name="_endDate" type="s:string" />
+    <wsdl:part name="_empId" type="s:string" />
+    <wsdl:part name="_allday" type="s:string" />
+    <wsdl:part name="_billingInformation" type="s:string" />
+    <wsdl:part name="_body" type="s:string" />
+    <wsdl:part name="_subject" type="s:string" />
+    <wsdl:part name="_categories" type="s:string" />
+    <wsdl:part name="_tASKPRIORITY" type="s:string" />
+    <wsdl:part name="_location" type="s:string" />
+    <wsdl:part name="_mileage" type="s:string" />
+    <wsdl:part name="_reminderSet" type="s:string" />
+    <wsdl:part name="_reminderMinutesBeforeStart" type="s:string" />
+    <wsdl:part name="_resources" type="s:string" />
+    <wsdl:part name="_responseRequested" type="s:string" />
+    <wsdl:part name="_sensitivity" type="s:string" />
+    <wsdl:part name="_aCTIVITYTIMETYPE" type="s:string" />
+    <wsdl:part name="_domainUserID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertActivityHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityHttpGetIn">
+    <wsdl:part name="_startDate" type="s:string" />
+    <wsdl:part name="_endDate" type="s:string" />
+    <wsdl:part name="_empId" type="s:string" />
+    <wsdl:part name="_allday" type="s:string" />
+    <wsdl:part name="_billingInformation" type="s:string" />
+    <wsdl:part name="_body" type="s:string" />
+    <wsdl:part name="_subject" type="s:string" />
+    <wsdl:part name="_categories" type="s:string" />
+    <wsdl:part name="_tASKPRIORITY" type="s:string" />
+    <wsdl:part name="_location" type="s:string" />
+    <wsdl:part name="_mileage" type="s:string" />
+    <wsdl:part name="_reminderSet" type="s:string" />
+    <wsdl:part name="_reminderMinutesBeforeStart" type="s:string" />
+    <wsdl:part name="_resources" type="s:string" />
+    <wsdl:part name="_responseRequested" type="s:string" />
+    <wsdl:part name="_sensitivity" type="s:string" />
+    <wsdl:part name="_aCTIVITYTIMETYPE" type="s:string" />
+    <wsdl:part name="_domainUserID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+    <wsdl:part name="_activityNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityOutlookEntryIdHttpGetIn">
+    <wsdl:part name="_activityNumber" type="s:string" />
+    <wsdl:part name="_dataArea" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityOutlookEntryIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsDeletedActivityHttpGetIn">
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsDeletedActivityHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivityHttpGetIn">
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivityHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmplTableHttpGetIn">
+    <wsdl:part name="_emplID" type="s:string" />
+    <wsdl:part name="_outlookCalendarID" type="s:string" />
+    <wsdl:part name="_outlookCalendarStoreID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmplTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsBySalesDistrictHttpGetIn">
+    <wsdl:part name="DomainUserID" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="SalesDistrictId" type="s:string" />
+    <wsdl:part name="brNameFilter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsBySalesDistrictHttpGetOut">
+    <wsdl:part name="Body" element="tns:SMMBUSRELTABLE_DisplayDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsJsonHttpGetIn">
+    <wsdl:part name="DomainUserID" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="brNameFilter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsJsonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByPartyIDHttpGetIn">
+    <wsdl:part name="PartyID" type="s:string" />
+    <wsdl:part name="DataArea" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByPartyIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:CONTACTPERSONShortDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSalesDistrictsHttpGetIn">
+    <wsdl:part name="DomainUserID" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSalesDistrictsHttpGetOut">
+    <wsdl:part name="Body" element="tns:SalesDistrictDataTable" />
+  </wsdl:message>
+  <wsdl:message name="existActNumByOLEntryIDHttpGetIn">
+    <wsdl:part name="DataArea" type="s:string" />
+    <wsdl:part name="OLEntryID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="existActNumByOLEntryIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="synchronizationFinishedHttpGetIn">
+    <wsdl:part name="DataArea" type="s:string" />
+    <wsdl:part name="EmplId" type="s:string" />
+    <wsdl:part name="clientTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="synchronizationFinishedHttpGetOut" />
+  <wsdl:message name="getLastSynchronizationTimeHttpGetIn">
+    <wsdl:part name="DataArea" type="s:string" />
+    <wsdl:part name="EmplId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLastSynchronizationTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="IsLogHttpPostIn" />
+  <wsdl:message name="IsLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsTestModeHttpPostIn" />
+  <wsdl:message name="IsTestModeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetNetworkAliasHttpPostIn" />
+  <wsdl:message name="GetNetworkAliasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IsUsingWebReferencHttpPostIn" />
+  <wsdl:message name="IsUsingWebReferencHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateNextHttpPostIn" />
+  <wsdl:message name="FilterDateNextHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="FilterDateBackHttpPostIn" />
+  <wsdl:message name="FilterDateBackHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="WriteInfoHttpPostIn">
+    <wsdl:part name="info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteInfoHttpPostOut" />
+  <wsdl:message name="GetsmmActivitiesHttpPostIn">
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_responsibleEmployee" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetsmmActivitiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:SMMACTIVITIESDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataHttpPostIn">
+    <wsdl:part name="_domain" type="s:string" />
+    <wsdl:part name="_user" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:USERDATADataTable" />
+  </wsdl:message>
+  <wsdl:message name="InsertsmmActivitiesHttpPostIn">
+    <wsdl:part name="_startDate" type="s:string" />
+    <wsdl:part name="_endDate" type="s:string" />
+    <wsdl:part name="_empId" type="s:string" />
+    <wsdl:part name="_allday" type="s:string" />
+    <wsdl:part name="_billingInformation" type="s:string" />
+    <wsdl:part name="_body" type="s:string" />
+    <wsdl:part name="_subject" type="s:string" />
+    <wsdl:part name="_categories" type="s:string" />
+    <wsdl:part name="_tASKPRIORITY" type="s:string" />
+    <wsdl:part name="_location" type="s:string" />
+    <wsdl:part name="_mileage" type="s:string" />
+    <wsdl:part name="_reminderSet" type="s:string" />
+    <wsdl:part name="_reminderMinutesBeforeStart" type="s:string" />
+    <wsdl:part name="_resources" type="s:string" />
+    <wsdl:part name="_responseRequested" type="s:string" />
+    <wsdl:part name="_sensitivity" type="s:string" />
+    <wsdl:part name="_aCTIVITYTIMETYPE" type="s:string" />
+    <wsdl:part name="_domainUserID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertsmmActivitiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="extractPartyIDHttpPostIn">
+    <wsdl:part name="message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="extractPartyIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertActivityHttpPostIn">
+    <wsdl:part name="_startDate" type="s:string" />
+    <wsdl:part name="_endDate" type="s:string" />
+    <wsdl:part name="_empId" type="s:string" />
+    <wsdl:part name="_allday" type="s:string" />
+    <wsdl:part name="_billingInformation" type="s:string" />
+    <wsdl:part name="_body" type="s:string" />
+    <wsdl:part name="_subject" type="s:string" />
+    <wsdl:part name="_categories" type="s:string" />
+    <wsdl:part name="_tASKPRIORITY" type="s:string" />
+    <wsdl:part name="_location" type="s:string" />
+    <wsdl:part name="_mileage" type="s:string" />
+    <wsdl:part name="_reminderSet" type="s:string" />
+    <wsdl:part name="_reminderMinutesBeforeStart" type="s:string" />
+    <wsdl:part name="_resources" type="s:string" />
+    <wsdl:part name="_responseRequested" type="s:string" />
+    <wsdl:part name="_sensitivity" type="s:string" />
+    <wsdl:part name="_aCTIVITYTIMETYPE" type="s:string" />
+    <wsdl:part name="_domainUserID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertActivityHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityHttpPostIn">
+    <wsdl:part name="_startDate" type="s:string" />
+    <wsdl:part name="_endDate" type="s:string" />
+    <wsdl:part name="_empId" type="s:string" />
+    <wsdl:part name="_allday" type="s:string" />
+    <wsdl:part name="_billingInformation" type="s:string" />
+    <wsdl:part name="_body" type="s:string" />
+    <wsdl:part name="_subject" type="s:string" />
+    <wsdl:part name="_categories" type="s:string" />
+    <wsdl:part name="_tASKPRIORITY" type="s:string" />
+    <wsdl:part name="_location" type="s:string" />
+    <wsdl:part name="_mileage" type="s:string" />
+    <wsdl:part name="_reminderSet" type="s:string" />
+    <wsdl:part name="_reminderMinutesBeforeStart" type="s:string" />
+    <wsdl:part name="_resources" type="s:string" />
+    <wsdl:part name="_responseRequested" type="s:string" />
+    <wsdl:part name="_sensitivity" type="s:string" />
+    <wsdl:part name="_aCTIVITYTIMETYPE" type="s:string" />
+    <wsdl:part name="_domainUserID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+    <wsdl:part name="_activityNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityOutlookEntryIdHttpPostIn">
+    <wsdl:part name="_activityNumber" type="s:string" />
+    <wsdl:part name="_dataArea" type="s:string" />
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivityOutlookEntryIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsDeletedActivityHttpPostIn">
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsDeletedActivityHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivityHttpPostIn">
+    <wsdl:part name="_outlookEntryId" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteActivityHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmplTableHttpPostIn">
+    <wsdl:part name="_emplID" type="s:string" />
+    <wsdl:part name="_outlookCalendarID" type="s:string" />
+    <wsdl:part name="_outlookCalendarStoreID" type="s:string" />
+    <wsdl:part name="_company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmplTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsBySalesDistrictHttpPostIn">
+    <wsdl:part name="DomainUserID" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="SalesDistrictId" type="s:string" />
+    <wsdl:part name="brNameFilter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsBySalesDistrictHttpPostOut">
+    <wsdl:part name="Body" element="tns:SMMBUSRELTABLE_DisplayDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsJsonHttpPostIn">
+    <wsdl:part name="DomainUserID" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="brNameFilter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessRelationsJsonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByPartyIDHttpPostIn">
+    <wsdl:part name="PartyID" type="s:string" />
+    <wsdl:part name="DataArea" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByPartyIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:CONTACTPERSONShortDataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSalesDistrictsHttpPostIn">
+    <wsdl:part name="DomainUserID" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSalesDistrictsHttpPostOut">
+    <wsdl:part name="Body" element="tns:SalesDistrictDataTable" />
+  </wsdl:message>
+  <wsdl:message name="existActNumByOLEntryIDHttpPostIn">
+    <wsdl:part name="DataArea" type="s:string" />
+    <wsdl:part name="OLEntryID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="existActNumByOLEntryIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="synchronizationFinishedHttpPostIn">
+    <wsdl:part name="DataArea" type="s:string" />
+    <wsdl:part name="EmplId" type="s:string" />
+    <wsdl:part name="clientTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="synchronizationFinishedHttpPostOut" />
+  <wsdl:message name="getLastSynchronizationTimeHttpPostIn">
+    <wsdl:part name="DataArea" type="s:string" />
+    <wsdl:part name="EmplId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLastSynchronizationTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:portType name="OutlookServiceSoap">
+    <wsdl:operation name="IsLog">
+      <wsdl:input message="tns:IsLogSoapIn" />
+      <wsdl:output message="tns:IsLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <wsdl:input message="tns:IsTestModeSoapIn" />
+      <wsdl:output message="tns:IsTestModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <wsdl:input message="tns:GetNetworkAliasSoapIn" />
+      <wsdl:output message="tns:GetNetworkAliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <wsdl:input message="tns:IsUsingWebReferencSoapIn" />
+      <wsdl:output message="tns:IsUsingWebReferencSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <wsdl:input message="tns:FilterDateNextSoapIn" />
+      <wsdl:output message="tns:FilterDateNextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <wsdl:input message="tns:FilterDateBackSoapIn" />
+      <wsdl:output message="tns:FilterDateBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <wsdl:input message="tns:WriteInfoSoapIn" />
+      <wsdl:output message="tns:WriteInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <wsdl:input message="tns:GetsmmActivitiesSoapIn" />
+      <wsdl:output message="tns:GetsmmActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input message="tns:GetUserDataSoapIn" />
+      <wsdl:output message="tns:GetUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <wsdl:input message="tns:InsertsmmActivitiesSoapIn" />
+      <wsdl:output message="tns:InsertsmmActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <wsdl:input message="tns:extractPartyIDSoapIn" />
+      <wsdl:output message="tns:extractPartyIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <wsdl:input message="tns:InsertActivitySoapIn" />
+      <wsdl:output message="tns:InsertActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <wsdl:input message="tns:UpdateActivitySoapIn" />
+      <wsdl:output message="tns:UpdateActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <wsdl:input message="tns:UpdateActivityOutlookEntryIdSoapIn" />
+      <wsdl:output message="tns:UpdateActivityOutlookEntryIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <wsdl:input message="tns:IsDeletedActivitySoapIn" />
+      <wsdl:output message="tns:IsDeletedActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input message="tns:DeleteActivitySoapIn" />
+      <wsdl:output message="tns:DeleteActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <wsdl:input message="tns:UpdateEmplTableSoapIn" />
+      <wsdl:output message="tns:UpdateEmplTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <wsdl:input message="tns:GetBusinessRelationsBySalesDistrictSoapIn" />
+      <wsdl:output message="tns:GetBusinessRelationsBySalesDistrictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <wsdl:input message="tns:GetBusinessRelationsJsonSoapIn" />
+      <wsdl:output message="tns:GetBusinessRelationsJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <wsdl:input message="tns:GetContactsByPartyIDSoapIn" />
+      <wsdl:output message="tns:GetContactsByPartyIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <wsdl:input message="tns:GetUserSalesDistrictsSoapIn" />
+      <wsdl:output message="tns:GetUserSalesDistrictsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <wsdl:input message="tns:existActNumByOLEntryIDSoapIn" />
+      <wsdl:output message="tns:existActNumByOLEntryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <wsdl:input message="tns:synchronizationFinishedSoapIn" />
+      <wsdl:output message="tns:synchronizationFinishedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <wsdl:input message="tns:getLastSynchronizationTimeSoapIn" />
+      <wsdl:output message="tns:getLastSynchronizationTimeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OutlookServiceHttpGet">
+    <wsdl:operation name="IsLog">
+      <wsdl:input message="tns:IsLogHttpGetIn" />
+      <wsdl:output message="tns:IsLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <wsdl:input message="tns:IsTestModeHttpGetIn" />
+      <wsdl:output message="tns:IsTestModeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <wsdl:input message="tns:GetNetworkAliasHttpGetIn" />
+      <wsdl:output message="tns:GetNetworkAliasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <wsdl:input message="tns:IsUsingWebReferencHttpGetIn" />
+      <wsdl:output message="tns:IsUsingWebReferencHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <wsdl:input message="tns:FilterDateNextHttpGetIn" />
+      <wsdl:output message="tns:FilterDateNextHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <wsdl:input message="tns:FilterDateBackHttpGetIn" />
+      <wsdl:output message="tns:FilterDateBackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <wsdl:input message="tns:WriteInfoHttpGetIn" />
+      <wsdl:output message="tns:WriteInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <wsdl:input message="tns:GetsmmActivitiesHttpGetIn" />
+      <wsdl:output message="tns:GetsmmActivitiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input message="tns:GetUserDataHttpGetIn" />
+      <wsdl:output message="tns:GetUserDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <wsdl:input message="tns:InsertsmmActivitiesHttpGetIn" />
+      <wsdl:output message="tns:InsertsmmActivitiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <wsdl:input message="tns:extractPartyIDHttpGetIn" />
+      <wsdl:output message="tns:extractPartyIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <wsdl:input message="tns:InsertActivityHttpGetIn" />
+      <wsdl:output message="tns:InsertActivityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <wsdl:input message="tns:UpdateActivityHttpGetIn" />
+      <wsdl:output message="tns:UpdateActivityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <wsdl:input message="tns:UpdateActivityOutlookEntryIdHttpGetIn" />
+      <wsdl:output message="tns:UpdateActivityOutlookEntryIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <wsdl:input message="tns:IsDeletedActivityHttpGetIn" />
+      <wsdl:output message="tns:IsDeletedActivityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input message="tns:DeleteActivityHttpGetIn" />
+      <wsdl:output message="tns:DeleteActivityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <wsdl:input message="tns:UpdateEmplTableHttpGetIn" />
+      <wsdl:output message="tns:UpdateEmplTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <wsdl:input message="tns:GetBusinessRelationsBySalesDistrictHttpGetIn" />
+      <wsdl:output message="tns:GetBusinessRelationsBySalesDistrictHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <wsdl:input message="tns:GetBusinessRelationsJsonHttpGetIn" />
+      <wsdl:output message="tns:GetBusinessRelationsJsonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <wsdl:input message="tns:GetContactsByPartyIDHttpGetIn" />
+      <wsdl:output message="tns:GetContactsByPartyIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <wsdl:input message="tns:GetUserSalesDistrictsHttpGetIn" />
+      <wsdl:output message="tns:GetUserSalesDistrictsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <wsdl:input message="tns:existActNumByOLEntryIDHttpGetIn" />
+      <wsdl:output message="tns:existActNumByOLEntryIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <wsdl:input message="tns:synchronizationFinishedHttpGetIn" />
+      <wsdl:output message="tns:synchronizationFinishedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <wsdl:input message="tns:getLastSynchronizationTimeHttpGetIn" />
+      <wsdl:output message="tns:getLastSynchronizationTimeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OutlookServiceHttpPost">
+    <wsdl:operation name="IsLog">
+      <wsdl:input message="tns:IsLogHttpPostIn" />
+      <wsdl:output message="tns:IsLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <wsdl:input message="tns:IsTestModeHttpPostIn" />
+      <wsdl:output message="tns:IsTestModeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <wsdl:input message="tns:GetNetworkAliasHttpPostIn" />
+      <wsdl:output message="tns:GetNetworkAliasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <wsdl:input message="tns:IsUsingWebReferencHttpPostIn" />
+      <wsdl:output message="tns:IsUsingWebReferencHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <wsdl:input message="tns:FilterDateNextHttpPostIn" />
+      <wsdl:output message="tns:FilterDateNextHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <wsdl:input message="tns:FilterDateBackHttpPostIn" />
+      <wsdl:output message="tns:FilterDateBackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <wsdl:input message="tns:WriteInfoHttpPostIn" />
+      <wsdl:output message="tns:WriteInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <wsdl:input message="tns:GetsmmActivitiesHttpPostIn" />
+      <wsdl:output message="tns:GetsmmActivitiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input message="tns:GetUserDataHttpPostIn" />
+      <wsdl:output message="tns:GetUserDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <wsdl:input message="tns:InsertsmmActivitiesHttpPostIn" />
+      <wsdl:output message="tns:InsertsmmActivitiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <wsdl:input message="tns:extractPartyIDHttpPostIn" />
+      <wsdl:output message="tns:extractPartyIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <wsdl:input message="tns:InsertActivityHttpPostIn" />
+      <wsdl:output message="tns:InsertActivityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <wsdl:input message="tns:UpdateActivityHttpPostIn" />
+      <wsdl:output message="tns:UpdateActivityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <wsdl:input message="tns:UpdateActivityOutlookEntryIdHttpPostIn" />
+      <wsdl:output message="tns:UpdateActivityOutlookEntryIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <wsdl:input message="tns:IsDeletedActivityHttpPostIn" />
+      <wsdl:output message="tns:IsDeletedActivityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input message="tns:DeleteActivityHttpPostIn" />
+      <wsdl:output message="tns:DeleteActivityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <wsdl:input message="tns:UpdateEmplTableHttpPostIn" />
+      <wsdl:output message="tns:UpdateEmplTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <wsdl:input message="tns:GetBusinessRelationsBySalesDistrictHttpPostIn" />
+      <wsdl:output message="tns:GetBusinessRelationsBySalesDistrictHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <wsdl:input message="tns:GetBusinessRelationsJsonHttpPostIn" />
+      <wsdl:output message="tns:GetBusinessRelationsJsonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <wsdl:input message="tns:GetContactsByPartyIDHttpPostIn" />
+      <wsdl:output message="tns:GetContactsByPartyIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <wsdl:input message="tns:GetUserSalesDistrictsHttpPostIn" />
+      <wsdl:output message="tns:GetUserSalesDistrictsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <wsdl:input message="tns:existActNumByOLEntryIDHttpPostIn" />
+      <wsdl:output message="tns:existActNumByOLEntryIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <wsdl:input message="tns:synchronizationFinishedHttpPostIn" />
+      <wsdl:output message="tns:synchronizationFinishedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <wsdl:input message="tns:getLastSynchronizationTimeHttpPostIn" />
+      <wsdl:output message="tns:getLastSynchronizationTimeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OutlookServiceSoap" type="tns:OutlookServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsLog">
+      <soap:operation soapAction="http://tempuri.org/IsLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <soap:operation soapAction="http://tempuri.org/IsTestMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <soap:operation soapAction="http://tempuri.org/GetNetworkAlias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <soap:operation soapAction="http://tempuri.org/IsUsingWebReferenc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <soap:operation soapAction="http://tempuri.org/FilterDateNext" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <soap:operation soapAction="http://tempuri.org/FilterDateBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <soap:operation soapAction="http://tempuri.org/WriteInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <soap:operation soapAction="http://tempuri.org/GetsmmActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <soap:operation soapAction="http://tempuri.org/InsertsmmActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <soap:operation soapAction="http://tempuri.org/extractPartyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <soap:operation soapAction="http://tempuri.org/InsertActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <soap:operation soapAction="http://tempuri.org/UpdateActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <soap:operation soapAction="http://tempuri.org/UpdateActivityOutlookEntryId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <soap:operation soapAction="http://tempuri.org/IsDeletedActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <soap:operation soapAction="http://tempuri.org/DeleteActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateEmplTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <soap:operation soapAction="http://tempuri.org/GetBusinessRelationsBySalesDistrict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <soap:operation soapAction="http://tempuri.org/GetBusinessRelationsJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <soap:operation soapAction="http://tempuri.org/GetContactsByPartyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <soap:operation soapAction="http://tempuri.org/GetUserSalesDistricts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <soap:operation soapAction="http://tempuri.org/existActNumByOLEntryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <soap:operation soapAction="http://tempuri.org/synchronizationFinished" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <soap:operation soapAction="http://tempuri.org/getLastSynchronizationTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OutlookServiceSoap12" type="tns:OutlookServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsLog">
+      <soap12:operation soapAction="http://tempuri.org/IsLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <soap12:operation soapAction="http://tempuri.org/IsTestMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <soap12:operation soapAction="http://tempuri.org/GetNetworkAlias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <soap12:operation soapAction="http://tempuri.org/IsUsingWebReferenc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <soap12:operation soapAction="http://tempuri.org/FilterDateNext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <soap12:operation soapAction="http://tempuri.org/FilterDateBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <soap12:operation soapAction="http://tempuri.org/WriteInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <soap12:operation soapAction="http://tempuri.org/GetsmmActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap12:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <soap12:operation soapAction="http://tempuri.org/InsertsmmActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <soap12:operation soapAction="http://tempuri.org/extractPartyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <soap12:operation soapAction="http://tempuri.org/InsertActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <soap12:operation soapAction="http://tempuri.org/UpdateActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <soap12:operation soapAction="http://tempuri.org/UpdateActivityOutlookEntryId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <soap12:operation soapAction="http://tempuri.org/IsDeletedActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <soap12:operation soapAction="http://tempuri.org/DeleteActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEmplTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <soap12:operation soapAction="http://tempuri.org/GetBusinessRelationsBySalesDistrict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <soap12:operation soapAction="http://tempuri.org/GetBusinessRelationsJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <soap12:operation soapAction="http://tempuri.org/GetContactsByPartyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <soap12:operation soapAction="http://tempuri.org/GetUserSalesDistricts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <soap12:operation soapAction="http://tempuri.org/existActNumByOLEntryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <soap12:operation soapAction="http://tempuri.org/synchronizationFinished" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <soap12:operation soapAction="http://tempuri.org/getLastSynchronizationTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OutlookServiceHttpGet" type="tns:OutlookServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="IsLog">
+      <http:operation location="/IsLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <http:operation location="/IsTestMode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <http:operation location="/GetNetworkAlias" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <http:operation location="/IsUsingWebReferenc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <http:operation location="/FilterDateNext" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <http:operation location="/FilterDateBack" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <http:operation location="/WriteInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <http:operation location="/GetsmmActivities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <http:operation location="/GetUserData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <http:operation location="/InsertsmmActivities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <http:operation location="/extractPartyID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <http:operation location="/InsertActivity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <http:operation location="/UpdateActivity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <http:operation location="/UpdateActivityOutlookEntryId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <http:operation location="/IsDeletedActivity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <http:operation location="/DeleteActivity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <http:operation location="/UpdateEmplTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <http:operation location="/GetBusinessRelationsBySalesDistrict" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <http:operation location="/GetBusinessRelationsJson" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <http:operation location="/GetContactsByPartyID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <http:operation location="/GetUserSalesDistricts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <http:operation location="/existActNumByOLEntryID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <http:operation location="/synchronizationFinished" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <http:operation location="/getLastSynchronizationTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OutlookServiceHttpPost" type="tns:OutlookServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="IsLog">
+      <http:operation location="/IsLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTestMode">
+      <http:operation location="/IsTestMode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetworkAlias">
+      <http:operation location="/GetNetworkAlias" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUsingWebReferenc">
+      <http:operation location="/IsUsingWebReferenc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateNext">
+      <http:operation location="/FilterDateNext" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterDateBack">
+      <http:operation location="/FilterDateBack" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteInfo">
+      <http:operation location="/WriteInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetsmmActivities">
+      <http:operation location="/GetsmmActivities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <http:operation location="/GetUserData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertsmmActivities">
+      <http:operation location="/InsertsmmActivities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extractPartyID">
+      <http:operation location="/extractPartyID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertActivity">
+      <http:operation location="/InsertActivity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivity">
+      <http:operation location="/UpdateActivity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivityOutlookEntryId">
+      <http:operation location="/UpdateActivityOutlookEntryId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDeletedActivity">
+      <http:operation location="/IsDeletedActivity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <http:operation location="/DeleteActivity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmplTable">
+      <http:operation location="/UpdateEmplTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsBySalesDistrict">
+      <http:operation location="/GetBusinessRelationsBySalesDistrict" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessRelationsJson">
+      <http:operation location="/GetBusinessRelationsJson" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByPartyID">
+      <http:operation location="/GetContactsByPartyID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSalesDistricts">
+      <http:operation location="/GetUserSalesDistricts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existActNumByOLEntryID">
+      <http:operation location="/existActNumByOLEntryID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizationFinished">
+      <http:operation location="/synchronizationFinished" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getLastSynchronizationTime">
+      <http:operation location="/getLastSynchronizationTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OutlookService">
+    <wsdl:port name="OutlookServiceSoap" binding="tns:OutlookServiceSoap">
+      <soap:address location="http://bcefesps03:8081/webservices/OutlookService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OutlookServiceSoap12" binding="tns:OutlookServiceSoap12">
+      <soap12:address location="http://bcefesps03:8081/webservices/OutlookService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OutlookServiceHttpGet" binding="tns:OutlookServiceHttpGet">
+      <http:address location="http://bcefesps03:8081/webservices/OutlookService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OutlookServiceHttpPost" binding="tns:OutlookServiceHttpPost">
+      <http:address location="http://bcefesps03:8081/webservices/OutlookService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

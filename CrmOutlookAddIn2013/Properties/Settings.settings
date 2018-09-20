@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CrmOutlookAddIn2013.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CrmOutlookAddIn2013_WebOutlookCrm_OutlookService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://bcepecrm01/WebServices/OutlookService.asmx</Value>
+    </Setting>
+    <Setting Name="CrmOutlookAddIn2013_WebOutlookCrmST_OutlookService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://bcefesps03:8081/webservices/OutlookService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://bcepecrm01/WebServices/OutlookService.asmx?wsdl" filename="OutlookService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://bcepecrm01/WebServices/OutlookService.asmx?schema=Northwind" filename="Northwind.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://bcepecrm01/WebServices/OutlookService.asmx?disco" filename="OutlookService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://bcepecrm01/WebServices/OutlookService.asmx?schema=smmActivities" filename="smmActivities.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://bcepecrm01/WebServices/OutlookService.asmx?schema=SMMTABLES" filename="SMMTABLES.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>
