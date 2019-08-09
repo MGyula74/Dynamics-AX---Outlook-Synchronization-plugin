@@ -12,6 +12,10 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 using System.Diagnostics;
 using System.Reflection;
 using Nager.Date;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace CrmOutlookAddIn2013
 {
@@ -189,6 +193,32 @@ namespace CrmOutlookAddIn2013
 
             try
             {
+                //XElement booksFromFile = XElement.Load(@"c:\\act.xml");
+                //String xmlStr = booksFromFile.ToString();
+                String soapMsg = File.ReadAllText(@"c:\\act.xml");
+                XmlDocument document = new XmlDocument();
+                document.LoadXml(soapMsg);  //loading soap message as string
+                XmlNamespaceManager manager = new XmlNamespaceManager(document.NameTable);
+
+                manager.AddNamespace("d", "http://someURL");
+
+                XmlNodeList xnList = document.SelectNodes("//bookHotelResponse", manager);
+                int nodes = xnList.Count;
+
+                //foreach (XmlNode xn in xnList)
+                //{
+                //    Status = xn["d:bookingStatus"].InnerText;
+                //}
+
+                XmlRootAttribute xRoot = new XmlRootAttribute();
+                xRoot.ElementName = "DocumentElement";
+                xRoot.IsNullable = true;
+                WebOutlookCrm.smmActivities.SMMACTIVITIESDataTable acts;
+                XmlSerializer ser = new XmlSerializer(typeof(WebOutlookCrm.smmActivities.SMMACTIVITIESDataTable), xRoot);
+                StreamReader reader = new StreamReader("c:\\act.xml");
+                acts = (WebOutlookCrm.smmActivities.SMMACTIVITIESDataTable)ser.Deserialize(reader);
+                reader.Close();
+
                 Stopwatch swGetActs = new Stopwatch();
                 swGetActs.Start();
 
@@ -479,6 +509,10 @@ namespace CrmOutlookAddIn2013
                         swAct.ElapsedMilliseconds));*/
 
                 } //end foreach
+            }
+            catch (InvalidOperationException ex)
+            {
+                printLogMsg(string.Format("Error transferring activities to Outlook! Error message: {0}", ex.Message));
             }
             catch (Exception ex)
             {

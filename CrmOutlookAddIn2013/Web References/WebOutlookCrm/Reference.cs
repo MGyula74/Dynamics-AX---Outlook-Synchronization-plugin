@@ -390,7 +390,15 @@ namespace CrmOutlookAddIn2013.WebOutlookCrm {
                         _responsibleEmployee});
             return ((smmActivities.SMMACTIVITIESDataTable)(results[0]));
         }
-        
+
+        public object[] GetsmmActivities2(string _company, string _responsibleEmployee)
+        {
+            object[] results = this.Invoke("GetsmmActivities", new object[] {
+                        _company,
+                        _responsibleEmployee});
+            return results;
+        }
+
         /// <remarks/>
         public void GetsmmActivitiesAsync(string _company, string _responsibleEmployee) {
             this.GetsmmActivitiesAsync(_company, _responsibleEmployee, null);
